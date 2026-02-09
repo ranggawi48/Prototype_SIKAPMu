@@ -71,7 +71,7 @@ body {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: url("/image/background.png") center/cover no-repeat;
+  background: url("../image/background.png") center/cover no-repeat;
 }
 
 /* =========================
