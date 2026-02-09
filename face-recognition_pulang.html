@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="./image/logo.png" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>SIKAPMU</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <section class="face-recognition-page">
+
+            <!-- Camera Container -->
+            <div class="camera-container">
+                <video id="video" autoplay playsinline></video>
+
+                <!-- Face Scan Overlay -->
+                <div class="face-scan-overlay">
+                    <div class="scan-frame">
+                        <!-- Corner Brackets -->
+                        <div class="corner corner-tl"></div>
+                        <div class="corner corner-tr"></div>
+                        <div class="corner corner-bl"></div>
+                        <div class="corner corner-br"></div>
+
+                        <!-- Scanning Line -->
+                        <div class="scan-line" id="scanLine"></div>
+                    </div>
+
+                    <p class="scan-instruction">Posisikan wajah Anda di dalam bingkai</p>
+                </div>
+            </div>
+
+            <!-- Success Popup -->
+            <div class="success-popup" id="successPopup">
+                <div class="success-content">
+                    <svg class="success-icon" width="60" height="60" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="12" r="10" stroke="#4CAF50" stroke-width="2" fill="none" />
+                        <path d="M9 12l2 2 4-4" stroke="#4CAF50" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <h2 class="success-title">PRESENSI PULANG BERHASIL</h2>
+                    <p class="success-name" id="successName">Rangga Wijaya</p>
+                    <p class="success-time" id="successTime">Rabu, 19 Maret 2025 Pukul 15.30</p>
+                    <button class="btn-ok" onclick="window.location.href='home.html'">OK</button>
+                </div>
+            </div>
+
+        </section>
+    </div>
+
+    <script src="./js/main.js"></script>
+    <script src="./js/face-recognition-pulang.js"></script>
+</body>
+
+</html>

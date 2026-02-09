@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="./image/logo.png" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>SIKAPMU</title>
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <section class="login-page">
+            <div class="pattern-bg"></div>
+
+            <!-- Header (logo + brand) -->
+            <div class="login-header">
+                <img class="login-logo" src="/image/logo.png" alt="Logo SMP Muhammadiyah 1 Cileungsi" />
+                <img class="text-logo" src="./image/text_logo.png" alt="SIKAPMU - Muhammadiyah Cileungsi App" />
+            </div>
+
+            <!-- Card putih bawah -->
+            <div class="login-card">
+                <h2 class="login-title">Masuk</h2>
+
+                <form class="login-form" autocomplete="off">
+                    <!-- NIS -->
+                    <div class="input-box">
+                        <span class="input-icon" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512"
+                                style="enable-background:new 0 0 512 512;" xml:space="preserve" width="26" height="512">
+                                <g>
+                                    <circle fill="#679966" cx="256" cy="128" r="128" />
+                                    <path fill="#679966"
+                                        d="M256,298.667c-105.99,0.118-191.882,86.01-192,192C64,502.449,73.551,512,85.333,512h341.333   c11.782,0,21.333-9.551,21.333-21.333C447.882,384.677,361.99,298.784,256,298.667z" />
+                                </g>
+                            </svg>
+                        </span>
+                        <input type="text" name="nis" placeholder="NIS" />
+                    </div>
+
+                    <!-- Password -->
+                    <div class="input-box">
+                        <span class="input-icon" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24"
+                                width="26" height="26">
+                                <path fill="#679966"
+                                    d="M19,8V7A7,7,0,0,0,5,7V8H2V21a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V8ZM13,18H11V14h2ZM17,8H7V7A5,5,0,0,1,17,7Z" />
+                            </svg>
+                        </span>
+                        <input type="password" name="password" id="password" class="password-input"
+                            placeholder="Kata sandi">
+                        <img src="./image/hidden.png" id="eyeicon">
+                    </div>
+
+                    <button class="btn-primary btn-login" type="button"
+                        onclick="window.location.href='home.html'">Masuk</button>
+                </form>
+                <button class="btn-back" type="button" aria-label="Kembali" onclick="window.location.href='index.html'">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                        <path d="M14.5 6.5 9 12l5.5 5.5" stroke="#fff" stroke-width="3" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

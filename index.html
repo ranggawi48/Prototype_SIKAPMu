@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="./image/logo.png" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>SIKAPMU</title>
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <!-- ===== Splash Screen ===== -->
+        <section id="screenSplash" class="screen is-active" aria-hidden="false">
+            <div class="pattern-bg"></div>
+
+            <div class="splash-center">
+                <!-- Ganti src sesuai file logo kamu -->
+                <img class="logo" src="./image/logo.png" alt="Logo SMP Muhammadiyah 1 Cileungsi" />
+
+                <img class="text-logo" src="./image/text_logo.png" alt="SIKAPMU - Muhammadiyah Cileungsi App" />
+
+            </div>
+
+            <div class="version">V 1.0.0</div>
+        </section>
+
+        <!-- ===== Welcome Screen ===== -->
+        <section id="screenWelcome" class="screen" aria-hidden="true">
+            <div class="pattern-bg"></div>
+
+            <div class="welcome-logo-wrap">
+                <img class="logo logo--welcome" src="./image/logo.png" alt="Logo SMP Muhammadiyah 1 Cileungsi" />
+            </div>
+
+            <div class="welcome-card">
+                <h2 class="welcome-title">
+                    Selamat Datang di <span class="welcome-brand">SIKAPMU</span>
+                </h2>
+                <p class="welcome-sub">Sekolahnya Para Pemimpin</p>
+
+                <button id="btnGetStarted" class="btn-primary" type="button">
+                    Let's Get Started
+                </button>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

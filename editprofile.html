@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="./image/logo.png" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>SIKAPMU</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <section class="editprofile-page">
+
+            <!-- Header -->
+            <div class="editprofile-header">
+                <button class="btn-back-header" onclick="window.location.href='profile.html'">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M15 18l-6-6 6-6" stroke="#111" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+                <h1 class="editprofile-title">Edit Profile</h1>
+                <div class="header-spacer"></div>
+            </div>
+
+            <!-- Content -->
+            <div class="editprofile-content">
+
+                <!-- Avatar Section -->
+                <div class="avatar-section">
+                    <div class="avatar-circle">
+                        <img src="./image/avatar.png" alt="Avatar" id="avatarPreview">
+                    </div>
+                    <input type="file" id="avatarInput" class="file-input" accept="image/*">
+                    <label for="avatarInput" class="btn-ubah-foto">Ubah Foto</label>
+                </div>
+
+                <!-- Form -->
+                <div class="editprofile-form">
+                    <div class="form-group">
+                        <label class="form-label">Nama</label>
+                        <input type="text" class="form-input" id="namaInput" placeholder="Masukkan Nama">
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="editprofile-actions">
+                    <button class="btn-simpan">Simpan</button>
+                    <button class="btn-batal" onclick="window.location.href='profile.html'">Batal</button>
+                </div>
+
+            </div>
+
+        </section>
+    </div>
+
+    <script src="./js/main.js"></script>
+    <script src="./js/editprofile.js"></script>
+</body>
+
+</html>

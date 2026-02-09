@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="./image/logo.png" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>SIKAPMU</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <section class="tambahizin-page">
+
+            <!-- Header -->
+            <div class="tambahizin-header">
+                <button class="btn-back-header" onclick="window.location.href='izin.html'">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M15 18l-6-6 6-6" stroke="#111" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+                <h1 class="tambahizin-title">Izin</h1>
+                <div class="header-spacer"></div>
+            </div>
+
+            <!-- Scrollable Content -->
+            <div class="tambahizin-scroll">
+
+                <!-- Form -->
+                <div class="tambahizin-form">
+
+                    <!-- Tanggal Kejadian -->
+                    <div class="form-group">
+                        <label class="form-label">Tanggal Kejadian</label>
+                        <div class="input-with-icon">
+                            <input type="date" class="form-input form-input-date" id="tanggalInput">
+                            <svg class="input-icon-right" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <rect x="3" y="4" width="18" height="18" rx="2" stroke="#111" stroke-width="2"
+                                    fill="none" />
+                                <path d="M16 2v4M8 2v4M3 10h18" stroke="#111" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Jenis Laporan -->
+                    <div class="form-group">
+                        <label class="form-label">Jenis Laporan</label>
+                        <div class="select-wrapper">
+                            <select class="form-select" id="jenisLaporan">
+                                <option value="">Pilih Jenis Laporan</option>
+                                <option value="izin">Izin</option>
+                                <option value="sakit">Sakit</option>
+                            </select>
+                            <svg class="select-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M6 9l6 6 6-6" stroke="#111" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Keterangan -->
+                    <div class="form-group">
+                        <label class="form-label">Keterangan</label>
+                        <textarea class="form-textarea" id="keterangan" rows="5"
+                            placeholder="Saya mengalami..."></textarea>
+                    </div>
+
+                    <!-- Bukti Pendukung -->
+                    <div class="form-group">
+                        <label class="form-label">Bukti Pendukung</label>
+                        <input type="file" id="fileInput" class="file-input" accept="image/*,.pdf" multiple>
+                        <label for="fileInput" class="btn-tambah-bukti">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 5v14M5 12h14" stroke="#111" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                            Tambah Bukti
+                        </label>
+                        <div id="fileList" class="file-list"></div>
+                    </div>
+
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="tambahizin-actions">
+                    <button class="btn-kirim">Kirim Laporan</button>
+                    <button class="btn-batal" onclick="window.location.href='izin.html'">Batal</button>
+                </div>
+
+            </div>
+
+        </section>
+    </div>
+
+    <script src="./js/main.js"></script>
+    <script src="./js/tambahizin.js"></script>
+</body>
+
+</html>

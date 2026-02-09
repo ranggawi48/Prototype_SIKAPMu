@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="./image/logo.png" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <title>SIKAPMU</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <section class="kehadiran-page">
+
+            <!-- Header -->
+            <div class="kehadiran-header">
+                <button class="btn-back-header" onclick="window.location.href='home.html'">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M15 18l-6-6 6-6" stroke="#111" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+                <h1 class="kehadiran-title">Kehadiran</h1>
+                <div class="header-spacer"></div>
+            </div>
+
+            <!-- Scrollable Content -->
+            <div class="kehadiran-scroll">
+
+                <!-- Chart Card -->
+                <div class="kehadiran-chart-card">
+                    <!-- Month Selector -->
+                    <div class="month-selector">
+                        <button class="month-nav" onclick="prevMonth()">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M15 18l-6-6 6-6" stroke="#111" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <span class="month-text" id="monthText">Maret 2025</span>
+                        <button class="month-nav" onclick="nextMonth()">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M9 18l6-6-6-6" stroke="#111" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Status Badges -->
+                    <div class="status-badges">
+                        <div class="badge-item hadir">
+                            <span class="badge-label">Hadir</span>
+                            <span class="badge-value">15</span>
+                        </div>
+                        <div class="badge-item sakit">
+                            <span class="badge-label">Sakit</span>
+                            <span class="badge-value">2</span>
+                        </div>
+                        <div class="badge-item izin">
+                            <span class="badge-label">Izin</span>
+                            <span class="badge-value">1</span>
+                        </div>
+                        <div class="badge-item terlambat">
+                            <span class="badge-label">Terlambat</span>
+                            <span class="badge-value">4</span>
+                        </div>
+                        <div class="badge-item pulang-awal">
+                            <span class="badge-label">Pulang Lebih Awal</span>
+                            <span class="badge-value">2</span>
+                        </div>
+                        <div class="badge-item alpa">
+                            <span class="badge-label">Alpa</span>
+                            <span class="badge-value">0</span>
+                        </div>
+                    </div>
+
+                    <!-- Chart Container -->
+                    <div class="chart-container">
+                        <canvas id="attendanceChart"></canvas>
+                    </div>
+
+                    <!-- Legend -->
+                    <div class="chart-legend">
+                        <div class="legend-row">
+                            <div class="legend-item">
+                                <span class="legend-dot hadir"></span>
+                                <span class="legend-label">Hadir</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-dot sakit"></span>
+                                <span class="legend-label">Sakit</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-dot izin"></span>
+                                <span class="legend-label">Izin</span>
+                            </div>
+                        </div>
+                        <div class="legend-row">
+                            <div class="legend-item">
+                                <span class="legend-dot alpa"></span>
+                                <span class="legend-label">Alpa</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-dot terlambat"></span>
+                                <span class="legend-label">Terlambat</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-dot pulang-awal"></span>
+                                <span class="legend-label">Pulang Lebih Awal</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Table Card -->
+                <div class="kehadiran-table-card">
+                    <table class="kehadiran-table">
+                        <thead>
+                            <tr>
+                                <th>Tanggal</th>
+                                <th>Status</th>
+                                <th>Masuk</th>
+                                <th>Pulang</th>
+                                <th>Keterangan</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>01-03-2025</td>
+                                <td><span class="status-badge hadir">Hadir</span></td>
+                                <td>06:35</td>
+                                <td>15:33</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>02-03-2025</td>
+                                <td><span class="status-badge sakit">Sakit</span></td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>Surat Dokter</td>
+                            </tr>
+                            <tr>
+                                <td>03-03-2025</td>
+                                <td><span class="status-badge izin">Izin</span></td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>Keperluan Keluarga</td>
+                            </tr>
+                            <tr>
+                                <td>04-03-2025</td>
+                                <td><span class="status-badge hadir">Hadir</span></td>
+                                <td>07:55</td>
+                                <td>15:44</td>
+                                <td>Terlambat</td>
+                            </tr>
+                            <tr>
+                                <td>05-03-2025</td>
+                                <td><span class="status-badge hadir">Hadir</span></td>
+                                <td>06:22</td>
+                                <td>11:13</td>
+                                <td>Pulang Lebih Awal</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- Download Button -->
+                    <button class="btn-download">
+                        Download (PDF)
+                    </button>
+                </div>
+
+            </div>
+
+        </section>
+    </div>
+
+    <script src="./js/main.js"></script>
+    <script src="./js/kehadiran.js"></script>
+</body>
+
+</html>

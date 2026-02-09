@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="./image/logo.png" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>SIKAPMU</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <section class="tata-tertib-page">
+
+            <!-- Header -->
+            <div class="tata-tertib-header">
+                <button class="btn-back-header" onclick="window.location.href='home.html'">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M15 18l-6-6 6-6" stroke="#111" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+                <h1 class="tata-tertib-title">Tata Tertib</h1>
+                <div class="header-spacer"></div>
+            </div>
+
+            <!-- Scrollable Content -->
+            <div class="tata-tertib-scroll">
+
+                <!-- Info Card dengan Dropdown -->
+                <div class="tata-tertib-info-card">
+                    <div class="info-card-header">
+                        <div class="info-card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="#111"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                                <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" stroke="#111" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div class="info-card-text">
+                            <h3 class="info-card-title">Tata Tertib Sekolah</h3>
+                            <p class="info-card-desc">Klik kategori dibawah untuk melihat detail poin pelanggaran</p>
+                        </div>
+                    </div>
+
+                    <!-- Dropdown Toggle -->
+                    <button class="dropdown-toggle" onclick="toggleKeterangan()">
+                        <span>Lihat Keterangan Penting</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" id="dropdownIcon">
+                            <path d="M9 18l6-6-6-6" stroke="#111" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+
+                    <!-- Dropdown Content -->
+                    <div class="dropdown-content" id="keteranganContent">
+                        <p>Berikut adalah keterangan penting terkait sistem poin pelanggaran:</p>
+                        <ul>
+                            <li>Poin akan terakumulasi selama masa studi</li>
+                            <li>Setiap kategori memiliki bobot poin yang berbeda</li>
+                            <li>Siswa dapat mengajukan keberatan melalui BK</li>
+                            <li>Poin dapat dikurangi melalui prestasi atau kegiatan sosial</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Kategori Accordion -->
+                <div class="tata-tertib-categories">
+
+                    <!-- Pelanggaran Ringan -->
+                    <div class="category-accordion ringan">
+                        <button class="category-toggle" onclick="toggleCategory('ringan')">
+                            <div class="category-left">
+                                <div class="category-icon">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                                        <circle cx="12" cy="12" r="10" stroke="#4CAF50" stroke-width="2" fill="none" />
+                                        <path d="M12 8v4M12 16h.01" stroke="#4CAF50" stroke-width="2"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                </div>
+                                <div class="category-text">
+                                    <h3 class="category-title">Pelanggaran Ringan</h3>
+                                    <p class="category-subtitle">37 Poin Pelanggaran</p>
+                                </div>
+                            </div>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="category-arrow"
+                                id="arrowRingan">
+                                <path d="M9 18l6-6-6-6" stroke="#111" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <div class="category-content" id="contentRingan">
+                            <div class="pelanggaran-list">
+                                <div class="pelanggaran-item">
+                                    <span class="pelanggaran-text">Terlambat masuk kelas</span>
+                                    <span class="pelanggaran-poin">-1</span>
+                                </div>
+                                <div class="pelanggaran-item">
+                                    <span class="pelanggaran-text">Tidak memakai atribut lengkap</span>
+                                    <span class="pelanggaran-poin">-2</span>
+                                </div>
+                                <div class="pelanggaran-item">
+                                    <span class="pelanggaran-text">Rambut tidak rapi</span>
+                                    <span class="pelanggaran-poin">-1</span>
+                                </div>
+                                <div class="pelanggaran-item">
+                                    <span class="pelanggaran-text">Tidak mengerjakan PR</span>
+                                    <span class="pelanggaran-poin">-2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pelanggaran Sedang -->
+                    <div class="category-accordion sedang">
+                        <button class="category-toggle" onclick="toggleCategory('sedang')">
+                            <div class="category-left">
+                                <div class="category-icon">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                                        <path
+                                            d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
+                                            stroke="#FFC107" stroke-width="2" fill="none" />
+                                        <path d="M12 9v4M12 17h.01" stroke="#FFC107" stroke-width="2"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                </div>
+                                <div class="category-text">
+                                    <h3 class="category-title">Pelanggaran Sedang</h3>
+                                    <p class="category-subtitle">37 Poin Pelanggaran</p>
+                                </div>
+                            </div>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="category-arrow"
+                                id="arrowSedang">
+                                <path d="M9 18l6-6-6-6" stroke="#111" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <div class="category-content" id="contentSedang">
+                            <div class="pelanggaran-list">
+                                <div class="pelanggaran-item">
+                                    <span class="pelanggaran-text">Bolos tanpa keterangan</span>
+                                    <span class="pelanggaran-poin">-5</span>
+                                </div>
+                                <div class="pelanggaran-item">
+                                    <span class="pelanggaran-text">Merokok di lingkungan sekolah</span>
+                                    <span class="pelanggaran-poin">-10</span>
+                                </div>
+                                <div class="pelanggaran-item">
+                                    <span class="pelanggaran-text">Berkelahi dengan teman</span>
+                                    <span class="pelanggaran-poin">-8</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pelanggaran Berat -->
+                    <div class="category-accordion berat">
+                        <button class="category-toggle" onclick="toggleCategory('berat')">
+                            <div class="category-left">
+                                <div class="category-icon">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                                        <circle cx="12" cy="12" r="10" stroke="#F44336" stroke-width="2" fill="none" />
+                                        <path d="M15 9l-6 6M9 9l6 6" stroke="#F44336" stroke-width="2"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                </div>
+                                <div class="category-text">
+                                    <h3 class="category-title">Pelanggaran Berat</h3>
+                                    <p class="category-subtitle">18 Poin Pelanggaran</p>
+                                </div>
+                            </div>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="category-arrow"
+                                id="arrowBerat">
+                                <path d="M9 18l6-6-6-6" stroke="#111" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <div class="category-content" id="contentBerat">
+                            <div class="pelanggaran-list">
+                                <div class="pelanggaran-item">
+                                    <span class="pelanggaran-text">Membawa senjata tajam</span>
+                                    <span class="pelanggaran-poin">-20</span>
+                                </div>
+                                <div class="pelanggaran-item">
+                                    <span class="pelanggaran-text">Narkoba</span>
+                                    <span class="pelanggaran-poin">-50</span>
+                                </div>
+                                <div class="pelanggaran-item">
+                                    <span class="pelanggaran-text">Tawuran</span>
+                                    <span class="pelanggaran-poin">-30</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+    </div>
+
+    <script src="./js/main.js"></script>
+    <script>
+        function toggleKeterangan() {
+            const content = document.getElementById('keteranganContent');
+            const icon = document.getElementById('dropdownIcon');
+
+            content.classList.toggle('show');
+            icon.classList.toggle('rotated');
+        }
+
+        function toggleCategory(category) {
+            const content = document.getElementById('content' + category.charAt(0).toUpperCase() + category.slice(1));
+            const arrow = document.getElementById('arrow' + category.charAt(0).toUpperCase() + category.slice(1));
+
+            content.classList.toggle('show');
+            arrow.classList.toggle('rotated');
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="./image/logo.png" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>SIKAPMU</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <section class="face-recognition-page">
+
+            <!-- Camera Container -->
+            <div class="camera-container">
+                <video id="video" autoplay playsinline></video>
+                <canvas id="canvas" style="display: none;"></canvas>
+
+                <!-- Face Frame dengan sudut hijau -->
+                <div class="face-scan-overlay">
+                    <div class="scan-frame">
+                        <!-- Corner kiri atas -->
+                        <div class="corner corner-tl"></div>
+                        <!-- Corner kanan atas -->
+                        <div class="corner corner-tr"></div>
+                        <!-- Corner kiri bawah -->
+                        <div class="corner corner-bl"></div>
+                        <!-- Corner kanan bawah -->
+                        <div class="corner corner-br"></div>
+
+                        <!-- Scanning line animation -->
+                        <div class="scan-line" id="scanLine"></div>
+                    </div>
+
+                    <!-- Text instruction -->
+                    <p class="scan-instruction">Posisikan wajah Anda di dalam bingkai</p>
+                </div>
+            </div>
+
+            <!-- Success Popup (hidden by default) -->
+            <div class="success-popup" id="successPopup">
+                <div class="success-content">
+                    <div class="success-icon">
+                        <svg width="60" height="60" viewBox="0 0 60 60">
+                            <circle cx="30" cy="30" r="28" fill="#4CAF50" />
+                            <path d="M20 30l8 8 12-16" stroke="white" stroke-width="4" stroke-linecap="round"
+                                stroke-linejoin="round" fill="none" />
+                        </svg>
+                    </div>
+                    <h2 class="success-title">PRESENSI MASUK BERHASIL</h2>
+                    <p class="success-name">Rangga Wijaya</p>
+                    <p class="success-time" id="successTime">Rabu, 19 Maret 2025 Pukul 06.48</p>
+                    <button class="btn-ok" onclick="window.location.href='home.html'">OK</button>
+                </div>
+            </div>
+
+        </section>
+    </div>
+
+    <script src="./js/face-recognition.js"></script>
+</body>
+
+</html>

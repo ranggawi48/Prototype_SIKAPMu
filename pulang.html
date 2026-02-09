@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="./image/logo.png" />
+
+    <!-- Leaflet CSS - PENTING HARUS ADA -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>SIKAPMU</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <section class="masuk-page">
+
+            <!-- MAP FULL SCREEN -->
+            <div id="map" class="masuk-map"></div>
+
+            <!-- POPUP CARD MENGAMBANG -->
+            <div class="lokasi-popup">
+                <!-- Header -->
+                <h2 class="lokasi-title">CEK LOKASIKU</h2>
+
+                <!-- Info Items -->
+                <div class="lokasi-info">
+                    <div class="lokasi-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path
+                                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                                fill="#4CAF50" />
+                        </svg>
+                        <p class="lokasi-text" id="lokasiText">Memuat lokasi...</p>
+                    </div>
+
+                    <div class="lokasi-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="10" stroke="#42A5F5" stroke-width="2" fill="none" />
+                            <path d="M12 6v6l4 2" stroke="#42A5F5" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                        <div class="lokasi-inline">
+                            <span class="lokasi-label">Pulang :</span>
+                            <span class="lokasi-value" id="waktuText">-</span>
+                        </div>
+                    </div>
+
+                    <div class="lokasi-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"
+                                fill="#4CAF50" />
+                            <circle cx="12" cy="9" r="2.5" fill="#fff" />
+                        </svg>
+                        <p class="lokasi-text">SMP Muhammadiyah 1 Cileungsi</p>
+                    </div>
+                </div>
+
+                <!-- Button Presensi -->
+                <button class="btn-presensi-masuk" id="btnPresensi">
+                    PRESENSI PULANG
+                </button>
+            </div>
+
+            <!-- Floating Button Current Location -->
+            <button class="btn-current-location" id="btnCurrentLocation" title="Lokasi Saya">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="12" r="3" fill="white" />
+                    <circle cx="12" cy="12" r="8" stroke="white" stroke-width="2" fill="none" />
+                    <path d="M12 2v4M12 18v4M2 12h4M18 12h4" stroke="white" stroke-width="2" stroke-linecap="round" />
+                </svg>
+            </button>
+
+        </section>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="./js/pulang.js"></script>
+</body>
+
+</html>
