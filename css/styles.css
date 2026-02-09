@@ -2869,6 +2869,7 @@ body {
   border-color: #5f8f63;
 }
 
+/* Input Date - Native */
 .form-input-date{
   color: #111;
   position: relative;
@@ -2884,6 +2885,37 @@ body {
   opacity: 0;
   cursor: pointer;
   z-index: 2;
+}
+
+/* Untuk HP - pastikan icon tidak blocking */
+.input-with-icon .input-icon-right{
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Style untuk date value yang sudah dipilih */
+.form-input-date::-webkit-datetime-edit-text,
+.form-input-date::-webkit-datetime-edit-month-field,
+.form-input-date::-webkit-datetime-edit-day-field,
+.form-input-date::-webkit-datetime-edit-year-field {
+  color: #111;
+}
+
+/* Placeholder untuk date input */
+.form-input-date:invalid {
+  color: #999;
+}
+
+.form-input-date::before {
+  content: attr(placeholder);
+  color: #999;
+  position: absolute;
+  pointer-events: none;
+}
+
+.form-input-date:focus::before,
+.form-input-date:valid::before {
+  display: none;
 }
 
 .input-icon-right{
