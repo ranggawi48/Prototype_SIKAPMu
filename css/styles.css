@@ -2918,6 +2918,70 @@ body {
   display: none;
 }
 
+/* Flatpickr Custom Styling */
+.flatpickr-calendar {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  border: 1px solid #d0d0d0;
+  font-family: "Poppins", sans-serif;
+}
+
+.flatpickr-months {
+  background: #5f8f63;
+  border-radius: 12px 12px 0 0;
+}
+
+.flatpickr-current-month {
+  color: #fff;
+  font-weight: 600;
+}
+
+.flatpickr-prev-month svg,
+.flatpickr-next-month svg {
+  fill: #fff;
+}
+
+.flatpickr-weekdays {
+  background: #f8f8f8;
+}
+
+.flatpickr-weekday {
+  color: #666;
+  font-weight: 600;
+}
+
+.flatpickr-day {
+  color: #111;
+  border-radius: 8px;
+}
+
+.flatpickr-day:hover {
+  background: #e8f5e9;
+  border-color: #5f8f63;
+}
+
+.flatpickr-day.selected {
+  background: #5f8f63;
+  border-color: #5f8f63;
+  color: #fff;
+}
+
+.flatpickr-day.today {
+  border-color: #5f8f63;
+  color: #5f8f63;
+}
+
+.flatpickr-day.disabled {
+  color: #ccc;
+}
+
+/* Input readonly style */
+.form-input[readonly] {
+  background: #fff;
+  cursor: pointer;
+}
+
 .input-icon-right{
   position: absolute;
   right: 16px;
