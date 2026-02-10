@@ -10,21 +10,29 @@ document.addEventListener('DOMContentLoaded', function() {
     let selectedFiles = [];
 
     // ============================================
-    // FLATPICKR INITIALIZATION
+    // FLATPICKR INITIALIZATION - UPDATED CONFIG
     // ============================================
     flatpickr("#tanggalInput", {
         dateFormat: "d F Y",
         locale: "id",
         defaultDate: new Date(),
         minDate: "today",
-        maxDate: new Date().fp_incr(30), // 30 hari ke depan
-        disableMobile: false, // Gunakan flatpickr di mobile juga
-        static: false,
+        maxDate: new Date().fp_incr(30),
+        disableMobile: false,
+        static: true, // Tidak inline, popup biasa
+        position: "auto center", // Auto position
+        animate: true,
+        monthSelectorType: "dropdown", // Dropdown untuk pilih bulan
+        showMonths: 1, // Tampilkan 1 bulan
+        inline: false, // Popup, bukan inline
         onChange: function(selectedDates, dateStr, instance) {
             console.log("Tanggal dipilih:", dateStr);
         },
         onOpen: function(selectedDates, dateStr, instance) {
             console.log("Calendar opened");
+        },
+        onClose: function(selectedDates, dateStr, instance) {
+            console.log("Calendar closed");
         }
     });
 
@@ -35,7 +43,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const files = Array.from(e.target.files);
         
         files.forEach(file => {
-            // Check if file already exists
             const exists = selectedFiles.find(f => 
                 f.name === file.name && f.size === file.size
             );
@@ -46,7 +53,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Reset input value
         fileInput.value = '';
     });
 
@@ -72,11 +78,9 @@ document.addEventListener('DOMContentLoaded', function() {
         
         removeBtn.addEventListener('click', function(e) {
             e.preventDefault();
-            // Remove from array
             selectedFiles = selectedFiles.filter(f => 
                 !(f.name === file.name && f.size === file.size)
             );
-            // Remove from DOM
             fileItem.remove();
             console.log('File removed:', file.name);
         });
@@ -94,7 +98,6 @@ document.addEventListener('DOMContentLoaded', function() {
     function validateForm() {
         const tanggal = tanggalInput.value.trim();
         const jenis = jenisLaporan.value;
-        const ket = keterangan.value.trim();
         
         if (!tanggal) {
             alert('Mohon pilih Tanggal Kejadian');
@@ -134,15 +137,11 @@ document.addEventListener('DOMContentLoaded', function() {
         
         console.log('Form Data:', formData);
         
-        // Save to localStorage (optional)
         const existingData = JSON.parse(localStorage.getItem('izin_data') || '[]');
         existingData.push(formData);
         localStorage.setItem('izin_data', JSON.stringify(existingData));
         
-        // Show success message
         alert('Laporan izin berhasil dikirim!');
-        
-        // Redirect back to izin page
         window.location.href = 'izin.html';
     });
 
@@ -152,7 +151,6 @@ document.addEventListener('DOMContentLoaded', function() {
     btnBatal.addEventListener('click', function(e) {
         e.preventDefault();
         
-        // Confirm before leaving
         const hasData = tanggalInput.value || 
                        jenisLaporan.value || 
                        keterangan.value.trim() || 
@@ -168,9 +166,6 @@ document.addEventListener('DOMContentLoaded', function() {
         window.location.href = 'izin.html';
     });
 
-    // ============================================
-    // CONSOLE LOG ON LOAD
-    // ============================================
     console.log('Tambah Izin page loaded');
     console.log('Flatpickr initialized');
 });
