@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // AIR DATEPICKER INITIALIZATION
     // ============================================
     new AirDatepicker('#tanggalInput', {
-        locale: localeId,
+        locale: window.localeId, // Pakai window.localeId
         dateFormat: 'd MMMM yyyy',
         autoClose: true,
         position: 'bottom center',
