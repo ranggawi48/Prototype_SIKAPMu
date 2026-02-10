@@ -10,29 +10,34 @@ document.addEventListener('DOMContentLoaded', function() {
     let selectedFiles = [];
 
     // ============================================
-    // FLATPICKR INITIALIZATION - UPDATED CONFIG
+    // AIR DATEPICKER INITIALIZATION
     // ============================================
-    flatpickr("#tanggalInput", {
-        dateFormat: "d F Y",
-        locale: "id",
-        defaultDate: new Date(),
-        minDate: "today",
-        maxDate: new Date().fp_incr(30),
-        disableMobile: false,
-        static: true, // Tidak inline, popup biasa
-        position: "auto center", // Auto position
-        animate: true,
-        monthSelectorType: "dropdown", // Dropdown untuk pilih bulan
-        showMonths: 1, // Tampilkan 1 bulan
-        inline: false, // Popup, bukan inline
-        onChange: function(selectedDates, dateStr, instance) {
-            console.log("Tanggal dipilih:", dateStr);
-        },
-        onOpen: function(selectedDates, dateStr, instance) {
-            console.log("Calendar opened");
-        },
-        onClose: function(selectedDates, dateStr, instance) {
-            console.log("Calendar closed");
+    new AirDatepicker('#tanggalInput', {
+        locale: localeId,
+        dateFormat: 'd MMMM yyyy',
+        autoClose: true,
+        position: 'bottom center',
+        isMobile: true,
+        toggleSelected: false,
+        selectedDates: [new Date()],
+        buttons: [
+            {
+                content: 'Hari Ini',
+                onClick: (dp) => {
+                    dp.selectDate(new Date());
+                    dp.hide();
+                }
+            },
+            {
+                content: 'Hapus',
+                onClick: (dp) => {
+                    dp.clear();
+                    dp.hide();
+                }
+            }
+        ],
+        onSelect: function({date, formattedDate, datepicker}) {
+            console.log('Tanggal dipilih:', formattedDate);
         }
     });
 
@@ -167,5 +172,5 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     console.log('Tambah Izin page loaded');
-    console.log('Flatpickr initialized');
+    console.log('Air Datepicker initialized');
 });
